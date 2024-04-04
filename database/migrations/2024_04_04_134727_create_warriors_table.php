@@ -13,10 +13,9 @@ return new class extends Migration
     {
         Schema::create('warriors', function (Blueprint $table) {
             $table->id();
-
+            $table->string('name', 20)->unique();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->integer('gold');
-
             $table->timestamps();
         });
     }
