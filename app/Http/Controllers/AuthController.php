@@ -9,7 +9,12 @@ use Illuminate\View\View;
 
 class AuthController extends Controller
 {
-    public function loginForm(): View {
+    public function loginForm(): View|RedirectResponse
+    {
+        if (Auth::user()) {
+            return redirect()->route('index');
+        }
+
         return view('auth/login');
     }
 
@@ -29,5 +34,13 @@ class AuthController extends Controller
         return back()->withErrors([
             'email' => 'The email or password is incorrect.',
         ])->onlyInput('email');
+    }
+
+    public function logout(Request $request): RedirectResponse
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect()->route('index');
     }
 }
