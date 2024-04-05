@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Game\TrainingController;
 use App\Http\Controllers\Game\WarriorController;
 use App\Http\Controllers\IndexController;
 use Illuminate\Support\Facades\Route;
@@ -19,4 +20,10 @@ Route::group(['middleware' => 'auth', 'prefix' => 'game', 'as' => 'game.'], func
 
     Route::get('/warrior', [WarriorController::class, 'index'])
         ->name('warrior');
+
+    Route::get('/training', [TrainingController::class, 'index'])
+        ->name('training');
+
+    Route::post('/training', [TrainingController::class, 'train'])
+        ->name('training.train');
 });

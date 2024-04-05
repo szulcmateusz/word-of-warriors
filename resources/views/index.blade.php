@@ -1,8 +1,7 @@
 @auth()
     <p>E-mail: {{ auth()->user()->email }}</p>
-    <p>User: {{ auth()->user()->warrior->name }}</p>
 
-    <p><a href="{{ route('game.warrior') }}">Enter the game</a></p>
+    <p><a href="{{ route('game.warrior') }}">Enter the game - <b>{{ auth()->user()->warrior->name }}</b></a></p>
 
     <form method="post" action="{{ route('logout') }}">
         @csrf
