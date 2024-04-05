@@ -17,8 +17,11 @@ class WarriorFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->name,
-            'gold' => fake()->numberBetween(1, 400),
+            'name' => fake()->text(random_int(5, 20)),
+            'points' => fake()->numberBetween(1, 400),
+            'gold' => fake()->numberBetween(600, 4000),
+            'strength' => fake()->numberBetween(1, 40),
+            'agility' => fake()->numberBetween(1, 40),
         ];
     }
 }

@@ -13,9 +13,12 @@ return new class extends Migration
     {
         Schema::create('warriors', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 20)->unique();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->string('name', 20)->unique();
+            $table->integer('points');
             $table->integer('gold');
+            $table->integer('strength');
+            $table->integer('agility');
             $table->timestamps();
         });
     }

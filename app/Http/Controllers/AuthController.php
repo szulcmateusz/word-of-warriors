@@ -5,19 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\View\View;
 
 class AuthController extends Controller
 {
-    public function loginForm(): View|RedirectResponse
-    {
-        if (Auth::user()) {
-            return redirect()->route('index');
-        }
-
-        return view('auth/login');
-    }
-
     public function authenticate(Request $request): RedirectResponse
     {
         $credentials = $request->validate([
