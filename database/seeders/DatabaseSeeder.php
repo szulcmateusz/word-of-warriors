@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory(10)->create()->each(function ($user) {
+        User::factory(20)->create()->each(function ($user) {
             Warrior::factory()->create([
                 'user_id' => $user->id,
             ]);

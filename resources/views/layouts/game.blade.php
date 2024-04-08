@@ -9,6 +9,12 @@
     </ul>
 </div>
 
+@if (auth()->user()->warrior->job)
+    <p>Current action: {{ auth()->user()->warrior->job->action }} - {{ \Carbon\Carbon::now()->diff(auth()->user()->warrior->job->end_date)->format('%H:%I:%S') }}</p>
+@else
+    <p>Current action: -</p>
+@endif
+
 <nav>
     <h3>Menu</h3>
     <ul>
