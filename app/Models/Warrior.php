@@ -15,7 +15,7 @@ class Warrior extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function job(): HasOne {
-        return $this->hasOne(JobWarrior::class);
+    public function event(): HasOne {
+        return $this->hasOne(WarriorEvent::class);
     }
 }

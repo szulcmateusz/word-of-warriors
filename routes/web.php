@@ -21,6 +21,9 @@ Route::group(['middleware' => 'auth', 'prefix' => 'game', 'as' => 'game.'], func
     Route::get('/warrior', [WarriorController::class, 'index'])
         ->name('warrior');
 
+    Route::delete('/warrior/stop-action', [WarriorController::class, 'stopAction'])
+        ->name('warrior.stopAction');
+
     Route::get('/training', [TrainingController::class, 'index'])
         ->name('training');
 

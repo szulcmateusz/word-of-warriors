@@ -9,8 +9,13 @@
     </ul>
 </div>
 
-@if (auth()->user()->warrior->job)
-    <p>Current action: {{ auth()->user()->warrior->job->action }} - {{ \Carbon\Carbon::now()->diff(auth()->user()->warrior->job->end_date)->format('%H:%I:%S') }}</p>
+@if (auth()->user()->warrior->event)
+    <p>Current action: {{ auth()->user()->warrior->event->action }} - {{ \Carbon\Carbon::now()->diff(auth()->user()->warrior->event->end_date)->format('%H:%I:%S') }}</p>
+    <form action="{{ route('game.warrior.stopAction') }}" method="post">
+        @csrf
+        @method('delete')
+        <button type="submit">Stop the action</button>
+    </form>
 @else
     <p>Current action: -</p>
 @endif
