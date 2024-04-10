@@ -24,6 +24,7 @@
     <h3>Menu</h3>
     <ul>
         <li><a href="{{ route('game.warrior') }}">Warrior</a></li>
+        <li><a href="{{ route('game.ranking') }}">Ranking</a></li>
         <li><a href="{{ route('game.hunting') }}">Hunting</a></li>
         <li><a href="{{ route('game.training') }}">Training</a></li>
         <li><a href="#">Adventure</a></li>
