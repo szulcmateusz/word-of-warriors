@@ -11,7 +11,7 @@
             <form action="{{ route('game.training.train') }}" method="post">
                 @csrf
                 <input type="hidden" name="skill" value="strength">
-                <button @if (auth()->user()->warrior->job) disabled @endif>Train</button>
+                <button @if (auth()->user()->warrior->event) disabled @endif>Train</button>
             </form>
         </li>
         <li>
@@ -19,7 +19,7 @@
             <form action="{{ route('game.training.train') }}" method="post">
                 @csrf
                 <input type="hidden" name="skill" value="agility">
-                <button>Train</button>
+                <button @if (auth()->user()->warrior->event) disabled @endif>Train</button>
             </form>
         </li>
     </ul>

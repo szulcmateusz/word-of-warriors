@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Game\HuntingController;
 use App\Http\Controllers\Game\TrainingController;
 use App\Http\Controllers\Game\WarriorController;
 use App\Http\Controllers\IndexController;
@@ -29,4 +30,10 @@ Route::group(['middleware' => 'auth', 'prefix' => 'game', 'as' => 'game.'], func
 
     Route::post('/training', [TrainingController::class, 'train'])
         ->name('training.train');
+
+    Route::get('/hunting', [HuntingController::class, 'index'])
+        ->name('hunting');
+
+    Route::post('/hunting', [HuntingController::class, 'hunt'])
+        ->name('hunting.hunt');
 });
