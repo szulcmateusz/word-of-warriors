@@ -1,0 +1,32 @@
+body {
+    font-family: "MedievalSharp", cursive;
+    min-height: 100vh;
+    background-image: url('/assets/images/bg-warrior.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.bg-hunting {
+    background-image: url("/assets/images/bg-hunting.webp");
+}
+
+.bg-training {
+    background-image: url("/assets/images/bg-training.webp");
+}
+
+.bg-ranking {
+    background-image: url("/assets/images/bg-ranking.webp");
+}
+
+.warrior {
+    background-image: url("/assets/images/bg-warrior.webp");
+}
+
+#main-menu {
+    background-color: rgba(0,0,0,0.6);
+}
+
+.bg-black-04 {
+    background-color: rgba(0,0,0,0.4);
+}
