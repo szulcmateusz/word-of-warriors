@@ -102,7 +102,7 @@
             <li>🔱 {{ auth()->user()->warrior->name }}</li>
             <li>🪙 {{ auth()->user()->warrior->gold }}</li>
             <li>⚔️ {{ auth()->user()->warrior->points }}</li>
-            <li>🎖 ranking</li>
+            <li>🎖 {{ auth()->user()->warrior->rankingPosition() }}</li>
         </ul>
     </div>
 </div>
