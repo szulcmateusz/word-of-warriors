@@ -33,13 +33,13 @@
             <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
                 <li>
                     <a href="{{ route('game.warrior') }}"
-                       class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:p-0 md:hover:text-blue-700 md:dark:bg-transparent @if(Request::url() === route('game.warrior')) md:dark:text-blue-500 @endif"
+                       class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:p-0 md:hover:text-blue-700 md:dark:bg-transparent @if(Illuminate\Support\Facades\Route::is('game.warrior')) md:dark:text-blue-500 @endif"
                        aria-current="page">Warrior</a>
                 </li>
 
                 <li>
                     <a href="{{ route('game.ranking') }}"
-                       class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent @if(Request::url() === route('game.ranking')) md:dark:text-blue-500 @endif">Ranking</a>
+                       class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent @if(Illuminate\Support\Facades\Route::is('game.ranking')) md:dark:text-blue-500 @endif">Ranking</a>
                 </li>
                 <li>
                     <form method="post" action="{{ route('logout') }}">
@@ -68,11 +68,11 @@
             <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
                 <li>
                     <a href="{{ route('game.hunting') }}"
-                       class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent @if(Request::url() === route('game.hunting')) md:dark:text-blue-500 @endif">Hunting</a>
+                       class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent @if(Illuminate\Support\Facades\Route::is('game.hunting')) md:dark:text-blue-500 @endif">Hunting</a>
                 </li>
                 <li>
                     <a href="{{ route('game.training') }}"
-                       class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent @if(Request::url() === route('game.training')) md:dark:text-blue-500 @endif">Training</a>
+                       class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent @if(Illuminate\Support\Facades\Route::is('game.training')) md:dark:text-blue-500 @endif">Training</a>
                 </li>
                 <li>
                     <a href="#"
@@ -124,7 +124,8 @@
 
 </div>
 <footer class="text-center text-white bg-black-04">
-    <small>Server time: {{ date("d-m-Y H:i:s") }}</small>
+    <small>Server time: <span id="server-time">{{ date("d-m-Y H:i:s") }}</span></small>
 </footer>
+<script src="/assets/js/script.js"></script>
 </body>
 </html>
