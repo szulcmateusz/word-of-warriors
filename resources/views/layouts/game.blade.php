@@ -124,7 +124,7 @@
 
 </div>
 <footer class="text-center text-white bg-black-04">
-    <small>Server time: <span id="server-time">{{ date("d-m-Y H:i:s") }}</span></small>
+    <small>Server time:  <span id="server-time">{{ date("H:i:s") }}</span></small>
 </footer>
 <script src="/assets/js/script.js"></script>
 </body>
