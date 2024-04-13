@@ -88,8 +88,8 @@
         <ul class="flex justify-around w-full text-white">
             <li>
                 @if (auth()->user()->warrior->event)
-                    Current action: {{ auth()->user()->warrior->event->action }}
-                    - {{ \Carbon\Carbon::now()->diff(auth()->user()->warrior->event->end_date)->format('%H:%I:%S') }}
+                    Current action: {{ auth()->user()->warrior->event->action }} -
+                    <span id="action-countdown">{{ \Carbon\Carbon::now()->diff(auth()->user()->warrior->event->end_date)->format('%H:%I:%S') }}</span>
                     <form action="{{ route('game.warrior.stopAction') }}" method="post" class="inline">
                         @csrf
                         @method('delete')
